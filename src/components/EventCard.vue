@@ -1,70 +1,15 @@
 <template>
-  <div class="event-card-component-wrapper">
-    <div class="container-fluid">
-      <div class="event_month">JULY</div>
-      <div v-bind:key="field.event" v-for="field in data.event" v-if="field.event_year == '2018'" class="row EventCard">
-        <div class="col-3 timeline">
-          <div class="line-vertical"></div>
-          <div class="line-horizontal"></div>
-          <div class="circle">
-          </div>
-          <!-- image if/else -->
-            <img class="event-icon"
-            src="../assets/images/drafted_player.svg" v-show="field.event_type =='Drafted'"/>
-            <img class="event-icon" src="../assets/images/trade.svg" v-show="field.event_type =='Trade'">
+  <div id="event-card-component-wrapper">
+    <div class="jumper">
+      <a name="july"> </a></div>
+      <section id="Section1">
+        <div class="container-fluid">
+
+
         </div>
-        <div class="col-9 events-list">
-          <div class="event-header">
-            <div class="event-date">
-              <p>{{ field.event_date }}, {{ field.event_year }} </p>
-            </div>
-              <p class="event-type">{{ field.event_type }} </p>
-            <div class="event-link">
-              <a :href="field.event_link">VIEW</a>
-            </div>
-          </div>
-          <div class="event-body">
-            <p class="event-text">
-              {{field.event_text}}
-            </p>
-          </div>
-        </div>
-        </div>
-      </div>
-          <div class="container-fluid">
-      <div class="event_month">AUGUST</div>
-      <div v-bind:key="field.event" v-for="field in data.event" v-if="field.event_year == '2017'" class="row EventCard">
-        <div class="col-3 timeline">
-          <div class="line-vertical"></div>
-          <div class="line-horizontal"></div>
-          <div class="circle">
-          </div>
-          <!-- image if/else -->
-            <img class="event-icon"
-            src="../assets/images/drafted_player.svg" v-show="field.event_type =='Drafted'"/>
-            <img class="event-icon" src="../assets/images/trade.svg" v-show="field.event_type =='Trade'">
-        </div>
-        <div class="col-9 events-list">
-          <div class="event-header">
-            <div class="event-date">
-              <p>{{ field.event_date }}, {{ field.event_year }} </p>
-            </div>
-              <p class="event-type">{{ field.event_type }} </p>
-            <div class="event-link">
-              <a :href="field.event_link">VIEW</a>
-            </div>
-          </div>
-          <div class="event-body">
-            <p class="event-text">
-              {{field.event_text}}
-            </p>
-          </div>
-        </div>
-        </div>
-      </div>
-      <div>
-      </div>
-    </div>
+      </section>
+  </div>
+  </div>
 </template>
 
 <script>
@@ -80,7 +25,9 @@ export default {
   },
   methods: {
     load() {
-      fetch("http://localhost:3000")
+      fetch(
+        "http://localhost:3000"
+      )
         .then(res => res.json())
         .then(data => {
           this.data = data;
@@ -90,11 +37,6 @@ export default {
   }
 };
 </script>
-
-
-
-</script>
-
 
 <style scoped>
 /* wrapper */
@@ -118,6 +60,7 @@ export default {
   width: 50px;
   border-radius: 50%;
   z-index: 0;
+  border-bottom: 2px solid white;
 }
 .event-icon {
   background-color: #fec524;
@@ -126,7 +69,18 @@ export default {
   left: 30px;
   height: 30px;
   width: 30px;
-  z-index: 10;
+  z-index: 1;
+}
+.arrow {
+  position: absolute;
+  top: 0px;
+  left: 36px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #1d428a;
+  border-top: 10px solid #1d428a;
 }
 .line-vertical {
   background-color: #1d428a;
@@ -149,7 +103,7 @@ export default {
 
 /* right */
 .events-list {
-  padding-right: 5%;
+  padding-right: 7%;
   padding-left: 0;
   padding-top: 30px;
 }
@@ -162,6 +116,8 @@ export default {
   padding-left: 10px;
   padding-right: 10px;
   height: 30px;
+  border-bottom: 2px solid white;
+  /* border-right: 2px solid white; */
 }
 .event-date,
 .event-link {
@@ -182,25 +138,61 @@ export default {
 a {
   color: #1d428a;
   background-color: #fec524;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  background-color: #fec524;
+  text-decoration: none;
 }
 .event-body {
-  background-color: #1d428a;
-  /* height: 50px; */
+  background-color: #0e2240;
+  height: 200px;
   color: white;
   padding: 10px;
   line-height: 1.3em;
   margin-bottom: 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 .event-text {
-  background-color: #1d428a;
+  background-color: #0e2240;
 }
 
 .event_month {
+  margin-bottom: 85px;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: #1d428a;
   color: white;
   /* width: 100px; */
   width: 100%;
   font-size: 2em;
   text-align: center;
+}
+
+#event-card-component-wrapper {
+  z-index: -10;
+}
+/* div {
+    height:800px;
+    background:red;
+} */
+#octtext {
+  margin:0;
+   background-color: #1d428a;
+  /* padding:30px 0; */
+    /* color:red; */
+
+  transition:all 1s linear
+}
+#octtext.view {
+  background-color: #0e2240;
+  padding:30px;
+  color:#fec524;
 }
 </style>

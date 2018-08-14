@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
-
+@import url("https://fonts.googleapis.com/css?family=Anton|Bungee|Teko");
 * {
-  font-family: "Roboto-Condensed";
+  font-family: "Teko";
   background-color: #0e2240;
   color: white;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
