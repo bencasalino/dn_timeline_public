@@ -71,9 +71,9 @@ $(window).scroll(function() {
        wH = $(window).height(),
        wS = $(this).scrollTop();
    if (wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)){
-      $('#oct').addClass('view')
+      $('#octtext').addClass('view')
    } else {
-      $('#oct').removeClass('view')
+      $('#octtext').removeClass('view')
    }
 });
 $(window).scroll(function() {

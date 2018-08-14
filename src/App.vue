@@ -38,8 +38,6 @@
         </div>
       <div class="left"></div>
       </div>
-
-
 <div class="pure-flexbox-wrapper-right">
         <div class="right"></div>
       <div class="navright">
@@ -50,17 +48,6 @@
     <!-- <router-view/> -->
     <div class="main-view">
       <EventCard/>
-      <p>Demonstrate fadeIn() with different parameters.</p>
-
-<button>Click to fade in boxes</button><br><br>
-
-<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
-<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
-<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
-  </div>
-      <!-- <section id="Section1"></section>
-<section id="Section2"></section>
-<section id="Section3"></section> -->
     </div>
 
 

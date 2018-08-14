@@ -3,12 +3,16 @@
     <div class="jumper">
       <a name="july"> </a></div>
       <section id="Section1">
-        <div class="container-fluid">
+           <div class="event_month" id="octlabel">
+             <h1 id="octtext">OCTOBER</h1>
+           </div>
+             <div class="container-fluid">
+                    <div class="roster-card">
 
-
-        </div>
+                    </div>
+            </div>
       </section>
-  </div>
+    </div>
   </div>
 </template>
 
